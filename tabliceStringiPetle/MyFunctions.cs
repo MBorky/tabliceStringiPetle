@@ -153,7 +153,24 @@ partial class Program
         Console.WriteLine("Jest palindromem");
         return true;
     }
-
+    static int SumNumbersToN(int n)
+    {
+        int sum = 0;
+        for (int i = 0; i <= n; i++)
+        {
+            sum += i;
+        }
+        return sum;
+    }
+    static int Factorial(int n)
+    {
+        int result = 1;
+        for(int i = 1;i <= n;i++)
+        {
+            result *= i;
+        }
+        return result;
+    }
 }
 
 
