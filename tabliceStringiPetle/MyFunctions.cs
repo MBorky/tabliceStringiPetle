@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -170,6 +171,49 @@ partial class Program
             result *= i;
         }
         return result;
+    }
+    static string PasswordGenerator()
+    {
+        string input;
+        int passLength;
+        bool properNumber;
+        // Protection against bad input - I know it should be in a separeted function
+            do
+            {
+                Console.WriteLine("Podaj długośc hasła: ");
+                input = Console.ReadLine();
+                properNumber = int.TryParse(input, out passLength);
+                if (!properNumber)
+                    Console.WriteLine("niepoprawny format liczby, podaj ponownie");
+            } while (!properNumber || passLength == 0);
+        // Generating password
+        Random rnd = new Random();
+        char[] password = new char[passLength];
+        int asciiRange;
+        // First step: Determine the ASCII range to use (for each character)
+        // Second step: Select the specific character to add to the password
+        for (int i = 0; i < passLength; i++)
+        {
+            asciiRange = rnd.Next(3);
+            if (asciiRange == 0)
+            {
+            // Number
+                password[i] = (char)rnd.Next(48, 58);
+            }
+            // Capital letter
+            else if (asciiRange == 1) 
+            {
+                password[i] = (char)rnd.Next(65, 91);
+            }
+            // Lowercase
+            else
+            {
+                password[i] = (char)rnd.Next(97, 123);
+            }
+           
+        }
+        string passwordToReturn = new string(password);
+        return passwordToReturn;
     }
 }
 

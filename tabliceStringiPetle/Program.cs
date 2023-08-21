@@ -17,3 +17,4 @@ c = FunctionDataInput('c');
 double delta = ComputeDelta(a, b, c);
 FunctionRoots(delta, a, b, c);
 
+Console.WriteLine(PasswordGenerator());
