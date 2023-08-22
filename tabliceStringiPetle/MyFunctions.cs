@@ -216,6 +216,3 @@ partial class Program
         return passwordToReturn;
     }
 }
-
-
-  
