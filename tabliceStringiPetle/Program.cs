@@ -3,7 +3,7 @@
 // Exercise 1. Calculate the roots of a quadratic function
 // Readout function parameters
 // Do while to protect against the entry of a zero
-double a, b, c;
+/*double a, b, c;
 do
 {
     a = FunctionDataInput('a');
@@ -18,3 +18,8 @@ double delta = ComputeDelta(a, b, c);
 FunctionRoots(delta, a, b, c);
 
 Console.WriteLine(PasswordGenerator());
+*/
+int[] intArrUnsorted = { 13, 2, 65, 6, 89, 3, 0, -3, 5 };
+Console.WriteLine(LinearSearch(intArrUnsorted, -3));
+int[] intArrSorted = { -20, -16, -6, 0, 12, 965, 1855, 2000 };
+Console.WriteLine(BinarySearch(intArrSorted, 2000));

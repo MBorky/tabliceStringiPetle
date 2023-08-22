@@ -215,4 +215,42 @@ partial class Program
         string passwordToReturn = new string(password);
         return passwordToReturn;
     }
+    static int LinearSearch(int[] arr, int toFind)
+    {
+        int arrLength = arr.Length;
+        for(int i = 0; i < arrLength; i++)
+        {
+            if (arr[i] == toFind)
+            {
+                return i;
+            } 
+  
+        }
+        return -1;
+    }
+    static int BinarySearch(int[] arr,int toFind)
+    {
+        int left = 0;
+        int right = arr.Length - 1;
+        // Non stop same dilemma - should I initializing out of iteration or not?
+        int mid = 0; 
+        while(left <= right)
+        {
+            mid = (left + right) / 2;
+            if (arr[mid] == toFind)
+            {
+                return mid;
+            }
+            else if (toFind < arr[mid])
+            {
+                right = mid - 1;
+            }
+            else if (toFind > arr[mid])
+            {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+
 }
