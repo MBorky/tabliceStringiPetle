@@ -19,7 +19,18 @@ FunctionRoots(delta, a, b, c);
 
 Console.WriteLine(PasswordGenerator());
 */
-int[] intArrUnsorted = { 13, 2, 65, 6, 89, 3, 0, -3, 5 };
-Console.WriteLine(LinearSearch(intArrUnsorted, -3));
+int[] intArrUnsorted = { 13, 2, 65, 6, 89, 3, 0, -3, 5, 0, 6777, -234, 4, 2 };
+//Console.WriteLine(LinearSearch(intArrUnsorted, -3));
 int[] intArrSorted = { -20, -16, -6, 0, 12, 965, 1855, 2000 };
-Console.WriteLine(BinarySearch(intArrSorted, 2000));
+//Console.WriteLine(BinarySearch(intArrSorted, 2000));
+int[] toSort = BubbleSort(intArrUnsorted);
+foreach (int i in toSort)
+{
+    Console.WriteLine(i);
+}
+
+int[] toSort2 = InsertionSort(intArrUnsorted);
+foreach (int i in toSort)
+{
+    Console.WriteLine(i);
+}

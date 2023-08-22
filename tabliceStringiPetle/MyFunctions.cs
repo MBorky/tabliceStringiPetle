@@ -252,5 +252,45 @@ partial class Program
         }
         return -1;
     }
+    // Czy powinienem robić to przez value czy przez reference?
+    static int[] BubbleSort(int[] arr)
+    {
+        bool sorted;
+        int temp;
+        int arrLength = arr.Length;
+        for (int i = 0; i < arrLength - 1; i++) 
+        {
+            sorted = true;
+            for (int j = 0; j < arrLength - i - 1; j++)
+            {
+                if (arr[j] > arr[j + 1])
+                {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    sorted = false;
+                }
+            }
+            if (sorted) break;
+        }
+        return arr;
 
+    }
+    // do poprawy, sortuje ale coś tu jest nie tak x)
+    static int[] InsertionSort(int[] arr)
+    {
+        int temp;
+        int j;
+        for (int i = 1; i < arr.Length; i++)
+        {   
+            j = i - 1;
+            temp = arr[i];
+            while (arr[j] > temp)
+            {
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        return arr;
+    }
 }
